@@ -1,3 +1,18 @@
+/*
+	NobleTeam
+
+	Noble, Trevor 
+	Derderian, Harry
+	Kaboli, Seena 
+	Asbun, Guido
+	Kim, Yeomyung
+
+	November 22, 2021 
+
+	CS A250
+	Project 1
+*/
+
 #pragma once
 #include<string>
 
@@ -18,7 +33,6 @@ class MemberType
 		void printName() const;
 		void printMemberInfo() const;
 		~MemberType();
-	protected:
 		
 	private:
 		std::string firstName;
