@@ -12,7 +12,6 @@
 	CS A250
 	Project 1
 */
-
 #pragma once
 #include<string>
 
