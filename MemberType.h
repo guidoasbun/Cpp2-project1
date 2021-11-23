@@ -19,7 +19,6 @@
 class MemberType
 {
 	public:
-		// SHOULD WE MAKE THE CONSTRUCTORS IN CPP ONLY OR IS THIS FINE?
 		MemberType() : 
 			firstName("N/A"), lastName("N/A"), memberID(0) {};
 
