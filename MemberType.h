@@ -12,7 +12,7 @@
 	CS A250
 	Project 1
 */
-#pragma once
+//#pragma once
 #include<string>
 
 class MemberType

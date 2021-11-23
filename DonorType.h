@@ -15,35 +15,29 @@
 #ifndef DONORTYPE_H
 #define DONORTYPE_H
 
+#include <iostream>
 #include "MemberType.h"
-
-
 
 class DonorType : public MemberType
 {
 public:
+    DonorType();
 
-	DonorType() :
-		donationAmount(0) {};
+    DonorType(const std::string& firstName, const std::string& lastName, const int& memberNumber, const double& donationAmount);
 
+    void setDonorInfo(const std::string& firstName, const std::string& lastName, const int& memberNumber, const double& donationAmount);
 
-	MemberType::DonorType(const std::string& first, const std::string& last, int id, double moneyGiven) :
-		firstName(first), lastName(last), memberID(id), donationAmount(moneyGiven) {};
+    void setAmountDonated(const double& donationAmount);
 
-	void setDonorInfo(const std::string&, const std::string&, int, double);
+    double getAmountDonated();
 
-	double setAmountDonated(&double);
+    void printDonor();
 
-	void printDonor();
+    void printDonation();
 
-	void printDonation();
-
-
-
-
+private:
+    double amount;
 };
 
 
-
-
-#endif // !DONORTYPE_H
+#endif
