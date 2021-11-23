@@ -1,4 +1,3 @@
-
 #include "DonorType.h"
 #include <iostream>
 #include <iomanip>
@@ -23,12 +22,12 @@ void DonorType::setDonorInfo(const std::string& firstName, const std::string& la
 
 void DonorType::setAmountDonated(const double &donationAmount)
 {
-
+    amount = donationAmount;
 }
 
 double DonorType::getAmountDonated()
 {
-
+    return amount;
 }
 
 void DonorType::printDonor()
