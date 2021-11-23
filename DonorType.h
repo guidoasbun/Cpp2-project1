@@ -12,7 +12,6 @@
 	CS A250
 	Project 1
 */
-
 #ifndef DONORTYPE_H
 #define DONORTYPE_H
 
