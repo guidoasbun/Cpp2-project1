@@ -12,7 +12,6 @@ public:
 	DonorType() :
 		donationAmount(0) {};
 
-
 	MemberType::DonorType(const std::string& first, const std::string& last, int id, double moneyGiven) :
 		firstName(first), lastName(last), memberID(id), donationAmount(moneyGiven) {};
 
