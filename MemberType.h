@@ -13,6 +13,10 @@
 	Project 1
 */
 //#pragma once
+
+#ifndef MEMBERTYPE_H
+#define MEMBERTYPE_H
+
 #include<string>
 
 class MemberType
@@ -37,3 +41,6 @@ class MemberType
 		std::string lastName;
 		int  memberID;
 };
+
+
+#endif

@@ -34,4 +34,7 @@ int main()
 	MemberType memberTwo("Tom", "Brady", 0001);
 	memberTwo.printMemberInfo();
 
+    DonorType aDonor;
+    aDonor.printDonor();
+
 }
