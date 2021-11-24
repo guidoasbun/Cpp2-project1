@@ -16,9 +16,10 @@
 #include "MemberType.h"
 #include "DonorType.h"
 
-using namespace std;
 int main()
 {
+    std::cout << "********** MemberType Test **********" << std::endl;
+
 	MemberType member;
 	member.printName();
 	member.printMemberInfo();
@@ -34,7 +35,25 @@ int main()
 	MemberType memberTwo("Tom", "Brady", 0001);
 	memberTwo.printMemberInfo();
 
-    DonorType aDonor;
-    aDonor.printDonor();
+    std::cout <<  "********** DonorType Test **********" << std::endl;
 
+    //Default Constructor
+    DonorType aDonor;
+    //Overloaded Constructor
+    DonorType aDonor2("Michael", "Jordan", 23, 2222.22);
+    //setDonorInfo
+    aDonor.setDonorInfo("LeBron", "James", 6, 1111.11);
+    //setAmountDonated
+    aDonor2.setAmountDonated(3333.33);
+    //getAmountDonated
+    std::cout << aDonor.getAmountDonated() << std::endl;
+    std::cout << aDonor2.getAmountDonated() << std::endl;
+    //printDonor
+    aDonor.printDonor();
+    aDonor2.printDonor();
+    //printDonation
+    aDonor.printDonation();
+    aDonor2.printDonation();
+
+    return 0;
 }
