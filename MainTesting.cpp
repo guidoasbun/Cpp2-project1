@@ -14,6 +14,9 @@
 */
 #include <iostream>
 #include "MemberType.h"
+#include "DonorType.h"
+
+using namespace std;
 int main()
 {
 	MemberType member;
@@ -30,4 +33,5 @@ int main()
 
 	MemberType memberTwo("Tom", "Brady", 0001);
 	memberTwo.printMemberInfo();
+
 }

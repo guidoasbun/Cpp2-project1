@@ -29,11 +29,11 @@ public:
 
     void setAmountDonated(const double& donationAmount);
 
-    double getAmountDonated();
+    double getAmountDonated() const;
 
-    void printDonor();
+    void printDonor() const;
 
-    void printDonation();
+    void printDonation() const;
 
 private:
     double amount;

@@ -25,17 +25,17 @@ void DonorType::setAmountDonated(const double &donationAmount)
     amount = donationAmount;
 }
 
-double DonorType::getAmountDonated()
+double DonorType::getAmountDonated() const
 {
     return amount;
 }
 
-void DonorType::printDonor()
+void DonorType::printDonor() const
 {
     MemberType::printMemberInfo();
 }
 
-void DonorType::printDonation()
+void DonorType::printDonation() const
 {
     cout << getFirstName() << ", " << getLastName() << endl;
     cout << fixed << showpoint << setprecision(2);
