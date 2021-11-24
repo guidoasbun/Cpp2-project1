@@ -1,5 +1,5 @@
 /*
-	NobleTeam
+	Noble Team
 
 	Noble, Trevor 
 	Derderian, Harry
@@ -12,8 +12,6 @@
 	CS A250
 	Project 1
 */
-//#pragma once
-
 #ifndef MEMBERTYPE_H
 #define MEMBERTYPE_H
 
