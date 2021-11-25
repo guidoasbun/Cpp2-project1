@@ -17,7 +17,7 @@ public:
 
 	Node* getPtrToNext() const { return ptrToNext; }
 	DonorType& getDonor() { return *donor;}
-	void setData(DonorType* theDonor) { donor = theDonor; }
+	void setDonor(DonorType* theDonor) { donor = theDonor; }
 	void setPtrToNext(Node* newPtrToNext) { ptrToNext = newPtrToNext; }
 	~Node() {}
 	private:
