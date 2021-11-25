@@ -42,7 +42,7 @@ public:
 		first(nullptr), last(nullptr), count(0) {};
 
 	void addDonor(const std::string& firstName,
-		const std::string& lastName, int memberNum);
+		const std::string& lastName, int memberNum, int donation);
 
 	void createList();
 
