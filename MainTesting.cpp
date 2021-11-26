@@ -62,13 +62,13 @@ int main()
 
 
 	std::cout << "********** Database Test **********" << std::endl;
-
 	// getData test
-	std::set<DonorType*> theSet =  getData();
+	std::set<DonorType> theSet =  getData();
 	// checking if set returned is correct
 	auto iter = theSet.begin();
 	// checking values inside set
-	(*iter)->printDonor();
+	for(iter; iter != theSet.end(); iter++)
+	iter->printDonor();
 	
 	return 0;
 }
