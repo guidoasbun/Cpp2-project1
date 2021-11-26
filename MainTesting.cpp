@@ -15,7 +15,8 @@
 #include <iostream>
 #include "MemberType.h"
 #include "DonorType.h"
-
+#include "Database.h"
+#include "set"
 int main()
 {
 	std::cout << "********** MemberType Test **********" << std::endl;
@@ -59,5 +60,15 @@ int main()
 	aDonor.printDonation();
 	aDonor2.printDonation();
 
+
+	std::cout << "********** Database Test **********" << std::endl;
+
+	// getData test
+	std::set<DonorType*> theSet =  getData();
+	// checking if set returned is correct
+	auto iter = theSet.begin();
+	// checking values inside set
+	(*iter)->printDonor();
+	
 	return 0;
 }
