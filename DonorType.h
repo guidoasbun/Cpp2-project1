@@ -1,14 +1,11 @@
 /*
-	NobleTeam
-
-	Noble, Trevor 
+	Noble Team
+	Noble, Trevor
 	Derderian, Harry
-	Kaboli, Seena 
+	Kaboli, Seena
 	Asbun, Guido
 	Kim, Yeomyung
-
-	November 22, 2021 
-
+	November 22, 2021
 	CS A250
 	Project 1
 */
@@ -20,24 +17,32 @@
 
 class DonorType : public MemberType
 {
+	
+
 public:
-    DonorType();
+	DonorType();
 
-    DonorType(const std::string& firstName, const std::string& lastName, const int& memberNumber, const double& donationAmount);
+	DonorType(const std::string& firstName,
+			const std::string& lastName, 
+				const int& memberNumber,
+					const double& donationAmount);
 
-    void setDonorInfo(const std::string& firstName, const std::string& lastName, const int& memberNumber, const double& donationAmount);
+	void setDonorInfo(const std::string& firstName, 
+			const std::string& lastName, 
+				const int& memberNumber, 
+					const double& donationAmount);
 
-    void setAmountDonated(const double& donationAmount);
+	void setAmountDonated(const double& donationAmount);
 
-    double getAmountDonated() const;
+	double getAmountDonated() const;
 
-    void printDonor() const;
+	void printDonor() const;
 
-    void printDonation() const;
+	void printDonation() const;
+	
+	/* Needed to use sets with this class */
+	bool operator<(const DonorType&) const;
 
 private:
-    double amount;
+	double amount;
 };
-
-
-#endif
