@@ -20,50 +20,50 @@
 class Node
 {
 public:
-	Node() : 
-		donor(nullptr), ptrToNext(nullptr) {}
-	Node(DonorType* theDonor, Node* newPtrToNext) :
-		donor(theDonor), ptrToNext(newPtrToNext){}
+    Node() :
+            donor(nullptr), ptrToNext(nullptr) {}
+    Node(DonorType* theDonor, Node* newPtrToNext) :
+            donor(theDonor), ptrToNext(newPtrToNext){}
 
-	Node* getPtrToNext() const { return ptrToNext; }
-	DonorType& getDonor() { return *donor;}
-	void setDonor(DonorType* theDonor) { donor = theDonor; }
-	void setPtrToNext(Node* newPtrToNext) { ptrToNext = newPtrToNext; }
-	~Node() {}
-	private:
-		DonorType* donor;
-		Node* ptrToNext; 
+    Node* getPtrToNext() const { return ptrToNext; }
+    DonorType& getDonor() { return *donor;}
+    void setDonor(DonorType* theDonor) { donor = theDonor; }
+    void setPtrToNext(Node* newPtrToNext) { ptrToNext = newPtrToNext; }
+    ~Node() {}
+private:
+    DonorType* donor;
+    Node* ptrToNext;
 };
 
 class DonorList
 {
 public:
-	DonorList() :
-		first(nullptr), last(nullptr), count(0) {};
+    DonorList() :
+            first(nullptr), last(nullptr), count(0) {};
 
-	void addDonor(const std::string& firstName,
-		const std::string& lastName, int memberNum, int donation);
+    void addDonor(const std::string& firstName,
+                  const std::string& lastName, int memberNum, int donation);
 
-	void createList();
+    void createList();
 
-	int getNoOfDonors() const;
+    int getNoOfDonors() const;
 
-	double getTotalDonations() const;
+    double getTotalDonations() const;
 
-	bool isEmpty() const;
+    bool isEmpty() const;
 
-	bool searchID(int memberID) const;
+    bool searchID(int memberID) const;
 
-	void deleteDonor(int memberID);
+    void deleteDonor(int memberID);
 
-	void printAllDonors() const;
+    void printAllDonors() const;
 
-	void clearList();
+    void clearList();
 
-	~DonorList() {}
+    ~DonorList() {}
 private:
-	Node* first;
-	Node* last;
-	int count;
+    Node* first;
+    Node* last;
+    int count;
 };
 #endif

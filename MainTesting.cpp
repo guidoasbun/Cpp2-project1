@@ -16,6 +16,7 @@
 #include "MemberType.h"
 #include "DonorType.h"
 #include "Database.h"
+#include "DonorList.h"
 #include "set"
 int main()
 {
@@ -69,6 +70,16 @@ int main()
 	// checking values inside set
 	for(iter; iter != theSet.end(); iter++)
 	iter->printDonor();
-	
+
+
+    std::cout << "********** DonorList Test **********" << std::endl;
+    // addDonor() test
+    DonorList aDonorList;
+    aDonorList.addDonor("FirstName1", "LastName1", 39680388, 1000.00);
+    aDonorList.addDonor("FirstName2", "LastName2", 46865466, 2000.00);
+
+    //printAllDonors() test
+    aDonorList.printAllDonors();
+
 	return 0;
 }
