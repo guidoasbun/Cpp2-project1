@@ -46,3 +46,5 @@ public:
 private:
 	double amount;
 };
+
+#endif
