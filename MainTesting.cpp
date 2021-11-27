@@ -81,5 +81,9 @@ int main()
     //printAllDonors() test
     aDonorList.printAllDonors();
 
+    //clearList() test
+    aDonorList.clearList();
+    aDonorList.printAllDonors();
+
 	return 0;
 }

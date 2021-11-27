@@ -60,7 +60,7 @@ public:
 
     void clearList();
 
-    ~DonorList() {}
+    ~DonorList();
 private:
     Node* first;
     Node* last;

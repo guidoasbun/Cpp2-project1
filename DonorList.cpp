@@ -85,5 +85,20 @@ void DonorList::printAllDonors() const
 
 void DonorList::clearList()
 {
+    Node* temp = first;
 
+    while (first != nullptr)
+    {
+        first = first->getPtrToNext();
+        delete temp;
+        temp = first;
+    }
+
+    last = nullptr;
+    count = 0;
+}
+
+DonorList::~DonorList()
+{
+    clearList();
 }
