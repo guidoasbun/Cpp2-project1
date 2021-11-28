@@ -100,7 +100,9 @@ int main()
     std::cout << "isEmpty() of empty List = " << aDonorList.isEmpty() << std::endl;
     std::cout << "isEmpty() of non empty List = " << aDonorList2.isEmpty() << std::endl;
 
-
+    //searchID() test
+    std::cout << "searchId() id in list = " << aDonorList2.searchID(85144828) << std::endl;
+    std::cout << "searchId() id not in list = " << aDonorList2.searchID(85112828) << std::endl;
 
 	return 0;
 }

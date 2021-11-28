@@ -55,9 +55,10 @@ int DonorList::getNoOfDonors() const
 
 double DonorList::getTotalDonations() const
 {
+    //Assumption, the list is not empty
     Node* current = first;
     double amountDonated = 0.0;
-    while (current->getPtrToNext() != nullptr)
+    while (current != nullptr)
     {
         amountDonated += current->getDonor().getAmountDonated();
         current = current->getPtrToNext();
@@ -72,12 +73,20 @@ bool DonorList::isEmpty() const
 
 bool DonorList::searchID(int memberID) const
 {
-    return true;
+    //Assumption, the list is not empty
+    Node* current = first;
+    while (current != nullptr)
+    {
+        if (current->getDonor().getMembershipNo() == memberID)
+            return true;
+        current = current->getPtrToNext();
+    }
+    return false;
 }
 
 void DonorList::deleteDonor(int memberID)
 {
-
+    //Assumption, the list is not empty
 }
 
 void DonorList::printAllDonors() const
