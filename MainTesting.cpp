@@ -85,5 +85,22 @@ int main()
     //clearList() test
     aDonorList.clearList();
 
+    //createList() test
+    DonorList aDonorList2;
+    aDonorList2.createList();
+    aDonorList2.printAllDonations();
+
+    //getNoOfDonors() test
+    std::cout << "getNoOfDonors() = " << aDonorList2.getNoOfDonors() << std::endl;
+
+    //getTotalDonations() test
+    std::cout << "getTotalDonations() = " << aDonorList2.getTotalDonations() << std::endl;
+
+    //isEmpty() test
+    std::cout << "isEmpty() of empty List = " << aDonorList.isEmpty() << std::endl;
+    std::cout << "isEmpty() of non empty List = " << aDonorList2.isEmpty() << std::endl;
+
+
+
 	return 0;
 }

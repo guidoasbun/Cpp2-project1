@@ -42,7 +42,10 @@ void DonorList::addDonor(const std::string &firstName, const std::string &lastNa
 
 void DonorList::createList()
 {
-
+    set<DonorType> theSet =  getData();
+    auto iter = theSet.begin();
+    for (const auto& elem : theSet)
+        addDonor(elem.getFirstName(), elem.getLastName(), elem.getMembershipNo(), elem.getAmountDonated());
 }
 
 int DonorList::getNoOfDonors() const
@@ -52,7 +55,14 @@ int DonorList::getNoOfDonors() const
 
 double DonorList::getTotalDonations() const
 {
-    return 1.1;
+    Node* current = first;
+    double amountDonated = 0.0;
+    while (current->getPtrToNext() != nullptr)
+    {
+        amountDonated += current->getDonor().getAmountDonated();
+        current = current->getPtrToNext();
+    }
+    return amountDonated;
 }
 
 bool DonorList::isEmpty() const
