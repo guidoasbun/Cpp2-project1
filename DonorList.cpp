@@ -13,7 +13,6 @@
 	Project 1
 */
 
-#include "MemberType.h"
 #include "DonorList.h"
 #include "DonorType.h"
 #include "Database.h"
@@ -48,7 +47,7 @@ void DonorList::createList()
 
 int DonorList::getNoOfDonors() const
 {
-    return 1;
+    return count;
 }
 
 double DonorList::getTotalDonations() const
@@ -58,7 +57,7 @@ double DonorList::getTotalDonations() const
 
 bool DonorList::isEmpty() const
 {
-    return true;
+    return !count;
 }
 
 bool DonorList::searchID(int memberID) const
