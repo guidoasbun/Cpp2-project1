@@ -13,8 +13,11 @@
 	Project 1
 */
 
+#include "MemberType.h"
 #include "DonorList.h"
 #include "DonorType.h"
+#include "Database.h"
+#include "set"
 
 using namespace std;
 
@@ -77,7 +80,22 @@ void DonorList::printAllDonors() const
         Node* current = first;
         while (current != nullptr)
         {
-            current->getDonor().printDonor();
+            current->getDonor().printMemberInfo();
+            current = current->getPtrToNext();
+        }
+    }
+}
+
+void DonorList::printAllDonations() const
+{
+    if (first == nullptr)
+        cerr << "Donor list is empty";
+    else
+    {
+        Node* current = first;
+        while (current != nullptr)
+        {
+            current->getDonor().printDonation();
             current = current->getPtrToNext();
         }
     }

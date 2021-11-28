@@ -58,6 +58,8 @@ public:
 
     void printAllDonors() const;
 
+    void printAllDonations() const;
+
     void clearList();
 
     ~DonorList();

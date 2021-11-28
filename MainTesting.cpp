@@ -18,6 +18,7 @@
 #include "Database.h"
 #include "DonorList.h"
 #include "set"
+
 int main()
 {
 	std::cout << "********** MemberType Test **********" << std::endl;
@@ -83,7 +84,6 @@ int main()
 
     //clearList() test
     aDonorList.clearList();
-    aDonorList.printAllDonors();
 
 	return 0;
 }
