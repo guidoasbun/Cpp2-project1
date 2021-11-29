@@ -52,7 +52,7 @@ void DonorType::printDonor() const
 
 void DonorType::printDonation() const
 {
-    cout << getFirstName() << ", " << getLastName() << endl;
+    cout << firstName << ", " << lastName << endl;
     cout << fixed << showpoint << setprecision(2);
     cout << "Donation Amount: $" << amount << endl;
 }
