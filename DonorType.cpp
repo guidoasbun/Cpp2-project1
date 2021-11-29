@@ -60,8 +60,7 @@ void DonorType::printDonation() const
 bool DonorType::operator<(const DonorType& otherDonor) const
 {
     if (amount == otherDonor.amount)
-        return  return memberID < otherDonor.memberID;
-   
+        return  memberID < otherDonor.memberID;
    else
         return  amount < otherDonor.amount;
 }

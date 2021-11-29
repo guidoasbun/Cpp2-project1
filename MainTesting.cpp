@@ -88,7 +88,7 @@ int main()
     //createList() test
     DonorList aDonorList2;
     aDonorList2.createList();
-    aDonorList2.printAllDonations();
+    aDonorList2.printAllDonors();
 
     //getNoOfDonors() test
     std::cout << "getNoOfDonors() = " << aDonorList2.getNoOfDonors() << std::endl;
@@ -104,5 +104,18 @@ int main()
     std::cout << "searchId() id in list = " << aDonorList2.searchID(85144828) << std::endl;
     std::cout << "searchId() id not in list = " << aDonorList2.searchID(85112828) << std::endl;
 
+    //deleteDonor() test
+    std::cout << "test deleteDonor() delete last = " << std::endl;
+    aDonorList2.deleteDonor(39680388);
+    aDonorList2.printAllDonors();
+    std::cout << "test deleteDonor() delete first = " << std::endl;
+    aDonorList2.deleteDonor(85156739);
+    aDonorList2.printAllDonors();
+    std::cout << "test deleteDonor() delete middle = " << std::endl;
+    aDonorList2.deleteDonor(20158583);
+    aDonorList2.printAllDonors();
+
+
+    aDonorList2.clearList();
 	return 0;
 }

@@ -86,7 +86,42 @@ bool DonorList::searchID(int memberID) const
 
 void DonorList::deleteDonor(int memberID)
 {
-    //Assumption, the list is not empty
+
+    if (first->getDonor().getMembershipNo() == memberID)
+    {
+        Node* current = first;
+        first = first->getPtrToNext();
+        delete current;
+        current = nullptr;
+        --count;
+    }
+    else
+    {
+        bool found = false;
+        Node* trailCurrent = first;
+        Node* current = first->getPtrToNext();
+
+        while (!found && current != nullptr)
+        {
+            if (current->getDonor().getMembershipNo() == memberID)
+            {
+                trailCurrent->setPtrToNext(current->getPtrToNext());
+                if (last->getDonor().getMembershipNo() == memberID)
+                    last = trailCurrent;
+                delete current;
+                current = nullptr;
+                --count;
+                found = true;
+            }
+            else
+            {
+                trailCurrent = current;
+                current = current->getPtrToNext();
+            }
+        }
+        if (!found)
+            cout << "Donor is not on the list" << endl;
+    }
 }
 
 void DonorList::printAllDonors() const
