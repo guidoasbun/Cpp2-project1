@@ -115,6 +115,9 @@ int main()
     aDonorList2.deleteDonor(20158583);
     aDonorList2.printAllDonors();
 
+    //printAllDonations() test
+    aDonorList2.printAllDonations();
+
 
     aDonorList2.clearList();
 	return 0;
