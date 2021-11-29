@@ -34,7 +34,7 @@ class MemberType
 		void printMemberInfo() const;
 		~MemberType();
 		
-	private:
+	protected:
 		std::string firstName;
 		std::string lastName;
 		int  memberID;
