@@ -115,6 +115,8 @@ int main()
     aDonorList2.deleteDonor(20158583);
     aDonorList2.printAllDonors();
 
+    std::cout << "After deleting 3 donors, we should have 15: ";
+    std::cout << aDonorList2.getNoOfDonors() << std::endl;
     //printAllDonations() test
     aDonorList2.printAllDonations();
 
