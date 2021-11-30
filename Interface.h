@@ -16,4 +16,9 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
+void displayMenu();
+
+void processSelection();
+
+
 #endif //CPP2_PROJECT1_INTERFACE_H
