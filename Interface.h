@@ -16,9 +16,17 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
+#include "DonorList.h"
+
 void displayMenu();
 
-void processSelection();
+void processSelection(DonorList& aDonorList);
+
+void addDonor(DonorList& aDonorList);
+
+void deleteDonor(DonorList& aDonorList);
+
+void printAllDonors(DonorList& aDonorList);
 
 
 #endif //CPP2_PROJECT1_INTERFACE_H

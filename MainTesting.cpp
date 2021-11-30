@@ -22,8 +22,14 @@
 
 int main()
 {
-    displayMenu();
-
+    DonorList aDonorList;
+    aDonorList.createList();
+    if (!aDonorList.isEmpty())
+    {
+        displayMenu();
+        processSelection(aDonorList);
+    }
+    aDonorList.clearList();
     return 0;
 //	std::cout << "********** MemberType Test **********" << std::endl;
 //	//Default Constructor
