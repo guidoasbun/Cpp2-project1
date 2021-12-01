@@ -24,10 +24,10 @@ void displayMenu()
     cout << string(49, '*') << endl;
     cout << string (20 , ' ') << "MAIN MENU" << endl;
     cout << string(49, '*') << endl;
-    cout << "\n Select one of the following:\n\n";
+    cout << "\nSelect one of the following:\n\n";
     cout << string(4, ' ') << "1. Add a donor\n";
-    cout << string (4, ' ') << "2. Delete a donors\n";
-    cout << string(4, ' ') << "3. Print all donors\n";
+    cout << string (4, ' ') << "2. Delete a donor\n";
+    cout << string(4, ' ') << "3. Print all donor\n";
     cout << string (4, ' ') << "4. To Exit\n\n";
 }
 
@@ -39,33 +39,37 @@ void processSelection(DonorList& aDonorList)
 
     while ((willContinue == "y") && !exit)
     {
-        cout << " => Enter your selection: ";
+        cout << "  => Enter your selection: ";
         int selection{0};
         cin >> selection;
 
         switch (selection)
         {
             case 1:
+                cout << endl;
                 addDonor(aDonorList);
                 break;
             case 2:
+                cout << endl;
                 deleteDonor(aDonorList);
                 break;
             case 3:
+                cout << endl;
                 printAllDonors(aDonorList);
                 break;
             case 4:
-                cout << " => Thank you for visiting our site!";
+                cout << "\n  => Thank you for visiting our site!\n";
                 exit = true;
                 break;
             default:
-                cout << " => Sorry. That is not a selection. ";
+                cout << "\n  => Sorry. That is not a selection.\n";
         }
 
         if (!exit)
         {
-            cout << " \n=> Would you like to continue? (y/n) ";
+            cout << " \n  => Would you like to continue? (y/n) ";
             cin >> willContinue;
+            cout << endl;
             if (willContinue == "y")
                 displayMenu();
         }
@@ -75,34 +79,34 @@ void processSelection(DonorList& aDonorList)
 void addDonor(DonorList& aDonorList)
 {
     string firstName;
-    cout << " => Enter donor's first name: ";
+    cout << "  => Enter donor's first name: ";
     cin >> firstName;
 
     string lastName;
-    cout << " => Enter donor's last name: ";
+    cout << "  => Enter donor's last name: ";
     cin >> lastName;
 
     int memberNumber;
-    cout << " => Enter donor's membership number: ";
+    cout << "  => Enter donor's membership number: ";
     cin >> memberNumber;
 
     double donationAmount;
-    cout << " => Enter amount donated: $ ";
+    cout << "  => Enter amount donated: $ ";
     cin >> donationAmount;
 
     aDonorList.addDonor(firstName, lastName, memberNumber, donationAmount);
-    cout << " => Donor has been added. \n";
+    cout << "\n  => Donor has been added. \n";
 }
 
 void deleteDonor(DonorList& aDonorList)
 {
     int membershipNumber;
-    cout << " => Enter donor's membership number: ";
+    cout << "  => Enter donor's membership number: ";
     cin >> membershipNumber;
 
     aDonorList.deleteDonor(membershipNumber);
 
-    cout << " => Donor has been deleted. \n";
+    cout << "\n  => Donor has been deleted. \n";
 }
 
 void printAllDonors(DonorList& aDonorList){

@@ -20,17 +20,17 @@
 #include "Interface.h"
 #include "set"
 
-int main()
-{
+int main() {
     DonorList aDonorList;
     aDonorList.createList();
-    if (!aDonorList.isEmpty())
-    {
+    if (!aDonorList.isEmpty()) {
         displayMenu();
         processSelection(aDonorList);
     }
     aDonorList.clearList();
+
     return 0;
+}
 //	std::cout << "********** MemberType Test **********" << std::endl;
 //	//Default Constructor
 //	MemberType member;
@@ -133,5 +133,5 @@ int main()
 //
 //    aDonorList2.clearList();
 
-	return 0;
-}
+//	return 0;
+
