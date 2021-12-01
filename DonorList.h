@@ -25,6 +25,8 @@ public:
     Node(DonorType* theDonor, Node* newPtrToNext) :
             donor(theDonor), ptrToNext(newPtrToNext){}
 
+    DonorList(const DonorList&); // Copy constructor
+	
     Node* getPtrToNext() const { return ptrToNext; }
     DonorType& getDonor() { return *donor;}
     void setDonor(DonorType* theDonor) { donor = theDonor; }
