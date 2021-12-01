@@ -35,7 +35,7 @@ void DonorList::addDonor(const std::string &firstName, const std::string &lastNa
         while (current->getPtrToNext() != nullptr)
             current = current->getPtrToNext();
         current->setPtrToNext(newNode);
-        last = current;
+        last = current->getPtrToNext();
     }
     ++count;
 }
