@@ -29,7 +29,10 @@ public:
     DonorType& getDonor() { return *donor;}
     void setDonor(DonorType* theDonor) { donor = theDonor; }
     void setPtrToNext(Node* newPtrToNext) { ptrToNext = newPtrToNext; }
-    ~Node() {}
+    ~Node() { 
+        delete donor;
+        ptrToNext = nullptr;
+    }
 private:
     DonorType* donor;
     Node* ptrToNext;
