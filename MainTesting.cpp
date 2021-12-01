@@ -21,11 +21,25 @@ int main() {
 
 	DonorList list1;
 	list1.createList();
+	std::cout << "List 1:\n";
 	std::cout << "Total donors: " << list1.getNoOfDonors() << std::endl;
 	list1.printAllDonors();
 	std::cout << std::endl << "\n********** list2 Test **********\n" << std::endl;
 	DonorList list2 = list1;
 	std::cout << "Total donors: " << list2.getNoOfDonors() << std::endl;
+	std::cout << "List 2:\n";
+	list2.printAllDonors();
+
+	std::cout << std::endl << "\n********** Clearing list 2 **********\n" << std::endl;
+	list2.clearList();
+
+	std::cout << "List 1:\n";
+	std::cout << "Total donors: " << list1.getNoOfDonors() << std::endl;
+	list1.printAllDonors();
+	std::cout << std::endl << "\n********** list2 Test **********\n" << std::endl;
+	std::cout << "List 2:\n";
+	std::cout << "Total donors: " << list2.getNoOfDonors() << std::endl;
+	
 	list2.printAllDonors();
 	return 0;
 }
