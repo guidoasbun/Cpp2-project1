@@ -1,14 +1,11 @@
 /*
 	Noble Team
-
 	Noble, Trevor
 	Derderian, Harry
 	Kaboli, Seena
 	Asbun, Guido
 	Kim, Yeomyung
-
 	November 22, 2021
-
 	CS A250
 	Project 1
 */
@@ -21,16 +18,28 @@
 #include "set"
 
 int main() {
-    DonorList aDonorList;
-    aDonorList.createList();
-    if (!aDonorList.isEmpty()) {
-        displayMenu();
-        processSelection(aDonorList);
-    }
-    aDonorList.clearList();
 
-    return 0;
+	DonorList list1;
+	list1.createList();
+	std::cout << "Total donors: " << list1.getNoOfDonors() << std::endl;
+	list1.printAllDonors();
+	std::cout << std::endl << "\n********** list2 Test **********\n" << std::endl;
+	DonorList list2 = list1;
+	std::cout << "Total donors: " << list2.getNoOfDonors() << std::endl;
+	list2.printAllDonors();
+	return 0;
 }
+
+/* DonorList aDonorList;
+	aDonorList.createList();
+	if (!aDonorList.isEmpty()) {
+		displayMenu();
+		processSelection(aDonorList);
+	}
+	aDonorList.clearList();
+
+	return 0; */
+
 //	std::cout << "********** MemberType Test **********" << std::endl;
 //	//Default Constructor
 //	MemberType member;
@@ -134,4 +143,3 @@ int main() {
 //    aDonorList2.clearList();
 
 //	return 0;
-
