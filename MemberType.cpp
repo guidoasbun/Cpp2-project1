@@ -1,13 +1,13 @@
 /*
-	NobleTeam
+	Noble Team
 
-	Noble, Trevor 
+	Noble, Trevor
 	Derderian, Harry
-	Kaboli, Seena 
+	Kaboli, Seena
 	Asbun, Guido
 	Kim, Yeomyung
 
-	November 22, 2021 
+	November 22, 2021
 
 	CS A250
 	Project 1
