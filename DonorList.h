@@ -32,11 +32,8 @@ public:
     void setDonor(const DonorType& theDonor) { donor = theDonor; }
     void setPtrToNext(Node* newPtrToNext) { ptrToNext = newPtrToNext;}
     
-	~Node()
-	{ 
-      //  delete donor;
-      //  ptrToNext = nullptr;
-    }
+	~Node() {}
+
 private:
     DonorType donor;
     Node* ptrToNext;

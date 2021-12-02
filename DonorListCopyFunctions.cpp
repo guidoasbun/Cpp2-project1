@@ -77,7 +77,8 @@ DonorList& DonorList::operator=(const DonorList& otherList)
 	Parameter: an object of the DonorList class
 	Case: The calling list is empty.
 	
-	Use the addDonor() function to start copying data from the parameter list.
+	Use the addDonor() function to start copying data from the 
+	parameter list.
 */
 void DonorList::copyCallingObjIsEmpty(const DonorList& otherList)
 {
@@ -99,10 +100,13 @@ void DonorList::copyCallingObjIsEmpty(const DonorList& otherList)
 /*
  Function copyObjectsSameLength
 	Parameter: an object of the DonorList class
-	Case: The calling object and the parameter object have the same number of nodes.
+	Case: The calling object and the parameter object have the same
+	number of nodes.
 
-	Since all the nodes are already there, you simply need to copy the data from the
-	parameter object into the calling object, without deleting or creating any nodes.
+	Since all the nodes are already there, you simply need to copy the
+	data from the
+	parameter object into the calling object, without deleting or crea
+	ting any nodes.
 */
 void DonorList::copyObjectsSameLength(const DonorList& otherList) const
 {
@@ -122,8 +126,9 @@ void DonorList::copyObjectsSameLength(const DonorList& otherList) const
 	Parameter: an object of the DonorList class
 	Case: The calling object has more nodes than the parameter object.
 	
-	Copy the data from the parameter object into the calling object, and then delete 
-	one by one the additional nodes left in the calling object.
+	Copy the data from the parameter object into the calling object,
+	and then delete one by one the additional nodes left in the
+	calling object.
 */
 void DonorList::copyCallingObjLonger(const DonorList& otherList)
 {
@@ -155,10 +160,11 @@ void DonorList::copyCallingObjLonger(const DonorList& otherList)
 /*
  Function copyCallingObjShorter
 	Parameter: an object of the DonorList class
-	Case: The calling object has fewer nodes than the parameter object.
+	Case: The calling object has fewer nodes than the parameter object
 	
-	Copy the data from the parameter object into the calling object, and then create 
-	additional nodes. Use the addDonor() function to copy the rest of the parameter list.
+	Copy the data from the parameter object into the calling object,
+	and then create additional nodes. Use the addDonor() function to
+	copy the rest of the parameter list.
 */
 void DonorList::copyCallingObjShorter(const DonorList& otherList)
 {
