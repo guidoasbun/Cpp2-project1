@@ -21,28 +21,30 @@
 #include "Interface.h"
 #include "set"
 
+using namespace std;
+
 int main() {
 
 	DonorList list1;
 	list1.createList();
-	std::cout << "List 1:\n";
-	std::cout << "Total donors: " << list1.getNoOfDonors() << std::endl;
+	cout << "List 1:\n";
+	cout << "Total donors: " << list1.getNoOfDonors() << endl;
 	list1.printAllDonors();
-	std::cout << std::endl << "\n********** list2 Test **********\n" << std::endl;
+	cout << endl << "\n********** list2 Test **********\n" << endl;
 	DonorList list2 = list1;
-	std::cout << "Total donors: " << list2.getNoOfDonors() << std::endl;
-	std::cout << "List 2:\n";
+	cout << "Total donors: " << list2.getNoOfDonors() << endl;
+	cout << "List 2:\n";
 	list2.printAllDonors();
 
-	std::cout << std::endl << "\n********** Clearing list 2 **********\n" << std::endl;
+	cout << endl << "\n********** Clearing list 2 **********\n" << endl;
 	list2.clearList();
 
-	std::cout << "List 1:\n";
-	std::cout << "Total donors: " << list1.getNoOfDonors() << std::endl;
+	cout << "List 1:\n";
+	cout << "Total donors: " << list1.getNoOfDonors() << endl;
 	list1.printAllDonors();
-	std::cout << std::endl << "\n********** list2 Test **********\n" << std::endl;
-	std::cout << "List 2:\n";
-	std::cout << "Total donors: " << list2.getNoOfDonors() << std::endl;
+	cout << endl << "\n********** list2 Test **********\n" << endl;
+	cout << "List 2:\n";
+	cout << "Total donors: " << list2.getNoOfDonors() << endl;
 	
 	list2.printAllDonors();
 	return 0;
