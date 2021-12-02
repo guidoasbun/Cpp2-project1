@@ -137,7 +137,7 @@ void DonorList::deleteDonor(int memberID)
 void DonorList::printAllDonors() const
 {
     if (first == nullptr)
-        cerr << "Donor list is empty";
+        cout << "Donor list is empty";
     else
     {
         Node* current = first;
@@ -152,7 +152,7 @@ void DonorList::printAllDonors() const
 void DonorList::printAllDonations() const
 {
     if (first == nullptr)
-        cerr << "Donor list is empty";
+        cout << "Donor list is empty";
     else
     {
         Node* current = first;
