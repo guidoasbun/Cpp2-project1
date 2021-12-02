@@ -37,3 +37,7 @@ DonorList::DonorList(const DonorList& otherList)
 	Using the function addDonor, copy each donor from the parameter list into the calling list.
 	*/
 }
+DonorList& DonorList::operator=(const DonorList& otherList)
+{
+
+
