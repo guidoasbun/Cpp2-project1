@@ -12,19 +12,24 @@
 	CS A250
 	Project 1
 */
+
 #include "MemberType.h"
+
 #include <iostream>
-void MemberType::setMemberInfo(const std::string& newFirst, 
+using namespace std;
+
+void MemberType::setMemberInfo(const string& newFirst,
 			       const std::string& newLast, int newID)
 {
 	firstName = newFirst;
 	lastName = newLast;
 	memberID = newID;
 }
-const std::string& MemberType::getFirstName() const
+
+const string& MemberType::getFirstName() const
 { return firstName; }
 
-const std::string& MemberType::getLastName() const
+const string& MemberType::getLastName() const
 { return lastName; }
 
 const int& MemberType::getMembershipNo() const 
@@ -32,14 +37,14 @@ const int& MemberType::getMembershipNo() const
 
 void MemberType::printName() const
 {
-	std::cout << firstName << " " 
-			<< lastName << std::endl;
+	cout << firstName << " "
+			<< lastName << endl;
 }
 
 void MemberType::printMemberInfo() const
 {
-	std::cout << memberID << " - " << firstName 
-		<< " " << lastName << std::endl;
+	cout << memberID << " - " << firstName
+		<< " " << lastName << endl;
 }
 
 MemberType::~MemberType()

@@ -11,12 +11,11 @@
 */
 
 #include "DonorType.h"
+
 #include <iostream>
 #include <iomanip>
 
 using namespace std;
-
-
 
 DonorType::DonorType()
 {
@@ -64,3 +63,5 @@ bool DonorType::operator<(const DonorType& otherDonor) const
    else
         return  amount < otherDonor.amount;
 }
+
+DonorType::~DonorType() { }

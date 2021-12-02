@@ -15,10 +15,12 @@
 
 #include "Interface.h"
 #include "DonorList.h"
+
 #include <iostream>
 #include <string>
 
 using namespace std;
+
 void displayMenu()
 {
     cout << string(49, '*') << endl;
