@@ -46,6 +46,8 @@ class DonorList
 {
 public:
     DonorList() : first(nullptr), last(nullptr), count(0) {};
+    
+	DonorList(const DonorList&);
 	
     void addDonor(const std::string& firstName,
     	const std::string& lastName, int memberNum, int donation);
@@ -65,15 +67,14 @@ public:
 
     void clearList();
     ~DonorList();
-	
-    DonorList(const DonorList&);
-    DonorList& operator=(const DonorList&);
 
 private:
-    void copyCallingObjIsEmpty(DonorList&) const;
-    void copyObjectsSameLength(DonorList&) const;
-    void copyCallingObjLonger(DonorList&)  const;
-    void copyCallingObjShorter(DonorList&) const;
+    DonorList& operator=(const DonorList&);
+    
+	void copyCallingObjIsEmpty(const DonorList&);
+    void copyObjectsSameLength(const DonorList&) const;
+    void copyCallingObjLonger(const DonorList&);
+    void copyCallingObjShorter(const DonorList&);
 	
     Node* first;
     Node* last;
