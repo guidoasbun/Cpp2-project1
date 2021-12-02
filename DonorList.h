@@ -71,10 +71,10 @@ public:
 private:
     DonorList& operator=(const DonorList&);
     
-	void copyCallingObjIsEmpty(const DonorList&);
-    void copyObjectsSameLength(const DonorList&) const;
-    void copyCallingObjLonger(const DonorList&);
-    void copyCallingObjShorter(const DonorList&);
+	void copyCallingObjIsEmpty(const DonorList& otherList);
+    void copyObjectsSameLength(const DonorList& otherList) const;
+    void copyCallingObjLonger(const DonorList& otherList);
+    void copyCallingObjShorter(const DonorList& otherList);
 	
     Node* first;
     Node* last;
