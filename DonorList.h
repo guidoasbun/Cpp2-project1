@@ -21,24 +21,24 @@
 class Node
 {
 public:
-    Node() : donor(nullptr), ptrToNext(nullptr) {}
+    Node() : donor(), ptrToNext(nullptr) {}
     
-	Node(DonorType* theDonor, Node* newPtrToNext) :
+	Node(const DonorType& theDonor, Node* newPtrToNext) :
         donor(theDonor), ptrToNext(newPtrToNext){}
 
     Node* getPtrToNext() const { return ptrToNext; }
-    DonorType& getDonor() { return *donor; }
+    DonorType& getDonor() { return donor; }
 
-    void setDonor(DonorType* theDonor) { donor = theDonor; }
+    void setDonor(const DonorType& theDonor) { donor = theDonor; }
     void setPtrToNext(Node* newPtrToNext) { ptrToNext = newPtrToNext;}
     
 	~Node()
 	{ 
-        delete donor;
-        ptrToNext = nullptr;
+      //  delete donor;
+      //  ptrToNext = nullptr;
     }
 private:
-    DonorType* donor;
+    DonorType donor;
     Node* ptrToNext;
 };
 

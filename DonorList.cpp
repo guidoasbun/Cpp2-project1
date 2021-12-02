@@ -26,7 +26,7 @@ void DonorList::addDonor(const std::string &firstName,
 {
     DonorType *newDonor = new DonorType(firstName, lastName,
 		memberNum, donation);
-    Node* newNode = new Node(newDonor, nullptr);
+    Node* newNode = new Node(*newDonor, nullptr);
     if (first == nullptr)
     {
         first = newNode;
