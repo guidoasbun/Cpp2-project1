@@ -19,7 +19,7 @@
 using namespace std;
 
 void MemberType::setMemberInfo(const string& newFirst,
-			       const std::string& newLast, int newID)
+		const std::string& newLast, int newID)
 {
 	firstName = newFirst;
 	lastName = newLast;

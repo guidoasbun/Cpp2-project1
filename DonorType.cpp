@@ -25,13 +25,16 @@ DonorType::DonorType()
     amount = 0;
 }
 
-DonorType::DonorType(const std::string& firstName, const std::string& lastName, const int& memberNumber,
-    const double& donationAmount) : MemberType(firstName, lastName, memberNumber)
+DonorType::DonorType(const string& firstName, const string& lastName,
+	const int& memberNumber, const double& donationAmount) : 
+	MemberType(firstName, lastName, memberNumber)
 {
     amount = donationAmount;
 }
 
-void DonorType::setDonorInfo(const std::string& firstName, const std::string& lastName, const int& memberNumber, const double& donationAmount)
+void DonorType::setDonorInfo(const string& firstName,
+	const string& lastName, const int& memberNumber,
+	const double& donationAmount)
 {
     MemberType::setMemberInfo(firstName, lastName, memberNumber);
     amount = donationAmount;
@@ -61,10 +64,10 @@ void DonorType::printDonation() const
 
 bool DonorType::operator<(const DonorType& otherDonor) const
 {
-    if (amount == otherDonor.amount)
-        return  memberID < otherDonor.memberID;
-   else
-        return  amount < otherDonor.amount;
+	if (amount == otherDonor.amount)
+		return  memberID < otherDonor.memberID;
+	else
+		return  amount < otherDonor.amount;
 }
 
 DonorType::~DonorType() { }

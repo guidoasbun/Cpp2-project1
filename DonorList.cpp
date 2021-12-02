@@ -21,9 +21,11 @@
 
 using namespace std;
 
-void DonorList::addDonor(const std::string &firstName, const std::string &lastName, int memberNum, int donation)
+void DonorList::addDonor(const std::string &firstName,
+	const std::string &lastName, int memberNum, int donation)
 {
-    DonorType *newDonor = new DonorType(firstName, lastName, memberNum, donation);
+    DonorType *newDonor = new DonorType(firstName, lastName,
+		memberNum, donation);
     Node* newNode = new Node(newDonor, nullptr);
     if (first == nullptr)
     {
@@ -44,9 +46,16 @@ void DonorList::addDonor(const std::string &firstName, const std::string &lastNa
 void DonorList::createList()
 {
     set<DonorType> theSet =  getData();
-    auto iter = theSet.begin();
-    for (const auto& elem : theSet)
-        addDonor(elem.getFirstName(), elem.getLastName(), elem.getMembershipNo(), elem.getAmountDonated());
+
+	if (theSet.size() <= 0)
+		cout << "\nDatabase has no data.\n";
+	else
+	{
+		auto iter = theSet.begin();
+		for (const auto& elem : theSet)
+			addDonor(elem.getFirstName(), elem.getLastName(),
+				elem.getMembershipNo(), elem.getAmountDonated());
+	}
 }
 
 int DonorList::getNoOfDonors() const

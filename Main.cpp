@@ -30,19 +30,19 @@ int main() {
 	cout << "List 1:\n";
 	cout << "Total donors: " << list1.getNoOfDonors() << endl;
 	list1.printAllDonors();
-	cout << endl << "\n********** list2 Test **********\n" << endl;
+	cout << "\n\n********** list2 Test **********\n" << endl;
 	DonorList list2 = list1;
 	cout << "Total donors: " << list2.getNoOfDonors() << endl;
 	cout << "List 2:\n";
 	list2.printAllDonors();
 
-	cout << endl << "\n********** Clearing list 2 **********\n" << endl;
+	cout << "\n\n********** Clearing list 2 **********\n" << endl;
 	list2.clearList();
 
 	cout << "List 1:\n";
 	cout << "Total donors: " << list1.getNoOfDonors() << endl;
 	list1.printAllDonors();
-	cout << endl << "\n********** list2 Test **********\n" << endl;
+	cout << "\n\n********** list2 Test **********\n" << endl;
 	cout << "List 2:\n";
 	cout << "Total donors: " << list2.getNoOfDonors() << endl;
 	

@@ -96,7 +96,8 @@ void addDonor(DonorList& aDonorList)
     cout << "  => Enter amount donated: $ ";
     cin >> donationAmount;
 
-    aDonorList.addDonor(firstName, lastName, memberNumber, donationAmount);
+    aDonorList.addDonor(firstName, lastName, memberNumber,
+		donationAmount);
     cout << "\n  => Donor has been added. \n";
 }
 
