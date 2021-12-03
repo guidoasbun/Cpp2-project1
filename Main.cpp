@@ -23,6 +23,204 @@
 
 using namespace std;
 
+/* PART E testing
+Create an object of the DonorList class.
+Call function createDonorList to create the linked list.
+Call function printAllDonor to check if all the donors are in the list.
+Once this is working, start testing the copy constructor.
+	How do you test the copy constructor?
+		Create another object of the DonorList class using the copy constructor.
+		Print both objects. They should be the same.
+		Empty one of the objects.
+	Print both objects again. One should still contain all original donors, 
+	while the other should be empty.
+If that is working, then test the copy assignment operator
+	How do you test the copy assignment operator?
+		You will need different tests for each case:
+		Test copyCallingObjIsEmpty()
+			Create list1 with no donors and list2 with 4 donors.
+				Print both lists.
+				Function call: list1 = list2
+				Print both lists (should be the same).
+				Empty one of the lists using the clearList() function.
+				Print both lists (one should be empty).
+		Test copyObjectsSameLength()
+			Create list1 with 4 donors and list2 with 4 donors (not the same donors of list1).
+			Repeat steps 1-5
+		Test copyCallingObjLonger()
+			Create list1 with 4 donors and list2 with 2 donors (not the same donors of list1).
+			Repeat steps 1-5
+		Test copyCallingObjShorter
+			Create list1 with 2 donors and list2 with 4 donors (not the same donors of list1).
+			Repeat steps 1-5
+		Test objects are the same
+			Create list1 with 2 donors.
+			Function call: list1 = list1
+			The same-object error should be displayed.
+*/
+int main() {
+	// PART E TESTING
+	cout << "\n\n********** Copy Constructor Test **********" << endl;
+	// initialize a donor list
+	DonorList aDonorList;
+	aDonorList.createList();
+	// test the list is full
+	cout << "\n## DONORLIST A PRINT:\n\n";
+	aDonorList.printAllDonors();
+	// copy constructor test
+	DonorList bDonorList = aDonorList;
+	// test the copy works
+	cout << "\n## DONORLIST B PRINT:\n\n";
+	bDonorList.printAllDonors();
+	// empty b
+	bDonorList.clearList();
+	cout << "\n## DONORLIST A PRINT AGAIN:\n\n";
+	aDonorList.printAllDonors();
+	cout << "\n## DONORLIST B PRINT...but EMPTY:\n\n";
+	bDonorList.printAllDonors();
+	
+	cout << "\n\n********** Copy Assignment Operator Test Sequence **********" << endl;
+		
+	cout << "\n\n********** copyCallingObjIsEmpty Test **********" << endl;
+	// create lists
+	DonorList list1;
+	DonorList list2;
+	// assign
+	list2.addDonor("Tom", "Brady", 9121, 1331);
+	list2.addDonor("John", "McCarthy", 1231, 62622);
+	list2.addDonor("Michael", "Jordan", 23, 2222);
+	list2.addDonor("LeBron", "James", 6, 2313);
+	// print em
+	cout << "\n## LIST1 INITIAL PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n\n## LIST2 INITIAL PRINT:\n\n";
+	list2.printAllDonors();
+	// set equal
+	list1 = list2;
+	// print em again
+	cout << "\n## LIST1 COPY PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 COPY PRINT:\n\n";
+	list2.printAllDonors();
+	// clear list 2
+	list2.clearList();
+	// print em again
+	cout << "\n## LIST1 SAME PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 EMPTY PRINT:\n\n";
+	list2.printAllDonors();
+
+	cout << "\n\n\n********** copyObjectsSameLength Test **********" << endl;
+	// clear
+	list1.clearList();
+	list2.clearList();
+	// assign list1
+	list1.addDonor("Sarah", "Connor", 1984, 331);
+	list1.addDonor("Turanga", "Leela", 3000, 21232);
+	list1.addDonor("Leia", "Organa", 1111, 42123);
+	list1.addDonor("Ellen", "Ripley", 2154, 1665);
+	// assign list2
+	list2.addDonor("Tom", "Brady", 9121, 1331);
+	list2.addDonor("John", "McCarthy", 1231, 62622);
+	list2.addDonor("Michael", "Jordan", 23, 2222);
+	list2.addDonor("LeBron", "James", 6, 2313);
+	// print em
+	cout << "\n## LIST1 INITIAL PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n\n## LIST2 INITIAL PRINT:\n\n";
+	list2.printAllDonors();
+	// set equal
+	list1 = list2;
+	// print em again
+	cout << "\n## LIST1 COPY PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 COPY PRINT:\n\n";
+	list2.printAllDonors();
+	// clear list 2
+	list2.clearList();
+	// print em again
+	cout << "\n## LIST1 SAME PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 EMPTY PRINT:\n\n";
+	list2.printAllDonors();
+
+	cout << "\n\n\n********** copyCallingObjLonger  Test **********" << endl;
+	// clear
+	list1.clearList();
+	list2.clearList();
+	// assign list1
+	list1.addDonor("Sarah", "Connor", 1984, 331);
+	list1.addDonor("Turanga", "Leela", 3000, 21232);
+	list1.addDonor("Leia", "Organa", 1111, 42123);
+	list1.addDonor("Ellen", "Ripley", 2154, 1665);
+	// assign list2
+	list2.addDonor("Michael", "Jordan", 23, 2222);
+	list2.addDonor("LeBron", "James", 6, 2313);
+	// print em
+	cout << "\n## LIST1 INITIAL PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n\n## LIST2 INITIAL PRINT:\n\n";
+	list2.printAllDonors();
+	// set equal
+	list1 = list2;
+	// print em again
+	cout << "\n## LIST1 COPY PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 COPY PRINT:\n\n";
+	list2.printAllDonors();
+	// clear list 2
+	list2.clearList();
+	// print em again
+	cout << "\n## LIST1 SAME PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 EMPTY PRINT:\n\n";
+	list2.printAllDonors();
+	
+	cout << "\n\n\n********** copyCallingObjShorter Test **********" << endl;
+	// clear
+	list1.clearList();
+	list2.clearList();
+	// assign list1
+	list1.addDonor("Turanga", "Leela", 3000, 21232);
+	list1.addDonor("Leia", "Organa", 1111, 42123);
+	// assign list2
+	list2.addDonor("Tom", "Brady", 9121, 1331);
+	list2.addDonor("John", "McCarthy", 1231, 62622);
+	list2.addDonor("Michael", "Jordan", 23, 2222);
+	list2.addDonor("LeBron", "James", 6, 2313);
+	// print em
+	cout << "\n## LIST1 INITIAL PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n\n## LIST2 INITIAL PRINT:\n\n";
+	list2.printAllDonors();
+	// set equal
+	list1 = list2;
+	// print em again
+	cout << "\n## LIST1 COPY PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 COPY PRINT:\n\n";
+	list2.printAllDonors();
+	// clear list 2
+	list2.clearList();
+	// print em again
+	cout << "\n## LIST1 SAME PRINT:\n\n";
+	list1.printAllDonors();
+	cout << "\n## LIST2 EMPTY PRINT:\n\n";
+	list2.printAllDonors();
+
+	cout << "\n\n********** Objects Are The Same(OATS) Test **********" << endl;
+	// clear
+	list1.clearList();
+	list2.clearList();
+	// assign list1
+	list1.addDonor("Turanga", "Leela", 3000, 21232);
+	list1.addDonor("Leia", "Organa", 1111, 42123);
+
+	cout << "\n\n";
+	list1 = list1;
+
+
+/*
 int main() {
     DonorList aDonorList;
     aDonorList.createList();
@@ -33,7 +231,7 @@ int main() {
 
     return 0;
 }
-
+*/
 /* 	DonorList list1;
 	list1.createList();
 	cout << "List 1:\n";
@@ -162,4 +360,5 @@ int main() {
 //
 //    aDonorList2.clearList();
 
-//	return 0;
+	return 0;
+}

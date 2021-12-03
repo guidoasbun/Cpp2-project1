@@ -82,9 +82,9 @@ DonorList& DonorList::operator=(const DonorList& otherList)
 */
 void DonorList::copyCallingObjIsEmpty(const DonorList& otherList)
 {
-	Node* curParam = otherList.first;
+	Node* curParam = otherList.first->getPtrToNext();
 	
-	first = new Node(curParam->getDonor(), nullptr);
+	first = new Node(otherList.first->getDonor(), nullptr);
 	Node* curCall  = first;
 
 	while (curParam != nullptr)
@@ -104,9 +104,8 @@ void DonorList::copyCallingObjIsEmpty(const DonorList& otherList)
 	number of nodes.
 
 	Since all the nodes are already there, you simply need to copy the
-	data from the
-	parameter object into the calling object, without deleting or crea
-	ting any nodes.
+	data from the parameter object into the calling object, without
+	deleting or creating any nodes.
 */
 void DonorList::copyObjectsSameLength(const DonorList& otherList) const
 {
@@ -136,21 +135,22 @@ void DonorList::copyCallingObjLonger(const DonorList& otherList)
 	Node* curCall  = first;
 	Node* temp = nullptr;
 
-	while (curParam != nullptr)
+	while (curParam->getPtrToNext() != nullptr)
 	{
 		curCall->setDonor(curParam->getDonor());
 		curParam = curParam->getPtrToNext();
 		curCall  = curCall->getPtrToNext();
 	}
 
+	curCall->setDonor(curParam->getDonor());
     last = curCall;
     curCall = curCall->getPtrToNext();
 
 	while (curCall != nullptr)
 	{
-		Node* temp = curCall->getPtrToNext();;
+		temp = curCall;
 		delete curCall;
-		curCall = temp;
+		curCall = temp->getPtrToNext();
 	}
 	last->setPtrToNext(nullptr);
 
@@ -171,6 +171,29 @@ void DonorList::copyCallingObjShorter(const DonorList& otherList)
 	Node* curParam = otherList.first;
 	Node* curCall  = first;
 
+	//int nodeAddCount = otherList.count - count;
+
+	//while (nodeAddCount >= 0 && curParam != nullptr) {
+	while (curParam != nullptr)
+	{
+		curCall->setDonor(curParam->getDonor());
+		curParam = curParam->getPtrToNext();
+		//curCall  = curCall->getPtrToNext();
+		
+		if (curCall->getPtrToNext() == nullptr)
+			curCall->setPtrToNext(new Node(curParam->getDonor(), nullptr));
+		else
+			curCall = curCall->getPtrToNext();
+	}
+	//curCall->setPtrToNext(new Node(curParam->getDonor(), nullptr));
+	last->setPtrToNext(nullptr);
+
+	count = otherList.count;
+
+
+/*
+	curCall->setDonor(curParam->getDonor());
+
 	while (curCall != nullptr)
 	{
 		curCall->setDonor(curParam->getDonor());
@@ -187,6 +210,6 @@ void DonorList::copyCallingObjShorter(const DonorList& otherList)
 	curCall->setPtrToNext(new Node(curParam->getDonor(), nullptr));
 	last->setPtrToNext(nullptr);
 
-	count = otherList.count;
+	count = otherList.count; */
 }
 
