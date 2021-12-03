@@ -23,41 +23,19 @@
 
 using namespace std;
 
-/* PART E testing
-Create an object of the DonorList class.
-Call function createDonorList to create the linked list.
-Call function printAllDonor to check if all the donors are in the list.
-Once this is working, start testing the copy constructor.
-	How do you test the copy constructor?
-		Create another object of the DonorList class using the copy constructor.
-		Print both objects. They should be the same.
-		Empty one of the objects.
-	Print both objects again. One should still contain all original donors, 
-	while the other should be empty.
-If that is working, then test the copy assignment operator
-	How do you test the copy assignment operator?
-		You will need different tests for each case:
-		Test copyCallingObjIsEmpty()
-			Create list1 with no donors and list2 with 4 donors.
-				Print both lists.
-				Function call: list1 = list2
-				Print both lists (should be the same).
-				Empty one of the lists using the clearList() function.
-				Print both lists (one should be empty).
-		Test copyObjectsSameLength()
-			Create list1 with 4 donors and list2 with 4 donors (not the same donors of list1).
-			Repeat steps 1-5
-		Test copyCallingObjLonger()
-			Create list1 with 4 donors and list2 with 2 donors (not the same donors of list1).
-			Repeat steps 1-5
-		Test copyCallingObjShorter
-			Create list1 with 2 donors and list2 with 4 donors (not the same donors of list1).
-			Repeat steps 1-5
-		Test objects are the same
-			Create list1 with 2 donors.
-			Function call: list1 = list1
-			The same-object error should be displayed.
-*/
+int main() {
+	DonorList aDonorList;
+	aDonorList.createList();
+	if (!aDonorList.isEmpty())
+	{
+		displayMenu();
+		processSelection(aDonorList);
+	}
+
+	return 0;
+}
+
+/*
 int main() {
 	// PART E TESTING
 	cout << "\n\n********** Copy Constructor Test **********" << endl;
@@ -220,7 +198,7 @@ int main() {
 	list1 = list1;
 
 
-/*
+*/
 int main() {
     DonorList aDonorList;
     aDonorList.createList();

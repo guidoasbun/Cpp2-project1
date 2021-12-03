@@ -171,45 +171,18 @@ void DonorList::copyCallingObjShorter(const DonorList& otherList)
 	Node* curParam = otherList.first;
 	Node* curCall  = first;
 
-	//int nodeAddCount = otherList.count - count;
-
-	//while (nodeAddCount >= 0 && curParam != nullptr) {
 	while (curParam != nullptr)
 	{
 		curCall->setDonor(curParam->getDonor());
 		curParam = curParam->getPtrToNext();
-		//curCall  = curCall->getPtrToNext();
 		
-		if (curCall->getPtrToNext() == nullptr)
-			curCall->setPtrToNext(new Node(curParam->getDonor(), nullptr));
-		else
-			curCall = curCall->getPtrToNext();
-	}
-	//curCall->setPtrToNext(new Node(curParam->getDonor(), nullptr));
-	last->setPtrToNext(nullptr);
-
+		if (curCall->getPtrToNext() == nullptr && curParam != nullptr)
+		{
+			DonorType donor = curParam->getDonor();
+			addDonor(donor.getFirstName(),donor.getLastName(), 
+				 donor.getMembershipNo(),donor.getAmountDonated());
+		}
+		curCall = curCall->getPtrToNext();
+	}		
 	count = otherList.count;
-
-
-/*
-	curCall->setDonor(curParam->getDonor());
-
-	while (curCall != nullptr)
-	{
-		curCall->setDonor(curParam->getDonor());
-		curParam = curParam->getPtrToNext();
-		curCall  = curCall->getPtrToNext();
-	}
-
-	while (curParam->getPtrToNext() != nullptr)
-	{
-		curParam = curParam->getPtrToNext();
-		curCall->setPtrToNext(new Node(curParam->getDonor(), nullptr));
-		curParam = curParam->getPtrToNext();
-	}
-	curCall->setPtrToNext(new Node(curParam->getDonor(), nullptr));
-	last->setPtrToNext(nullptr);
-
-	count = otherList.count; */
 }
-
