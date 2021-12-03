@@ -47,7 +47,7 @@ void DonorList::createList()
 {
     set<DonorType> theSet =  getData();
 
-	if (theSet.size() <= 0)
+	if (theSet.empty())
 		cout << "\nDatabase has no data.\n";
 	else
 	{

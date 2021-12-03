@@ -15,7 +15,6 @@
 
 #include "DonorList.h"
 #include "DonorType.h"
-#include "Database.h"
 #include "set"
 
 using namespace std;

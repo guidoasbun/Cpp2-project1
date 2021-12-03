@@ -13,14 +13,9 @@
 	Project 1
 */
 
-#include <iostream>
-#include "MemberType.h"
-#include "DonorType.h"
-#include "Database.h"
 #include "DonorList.h"
 #include "Interface.h"
 
-#include "set"
 using namespace std;
 
 int main()
