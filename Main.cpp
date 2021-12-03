@@ -24,8 +24,17 @@
 using namespace std;
 
 int main() {
+    DonorList aDonorList;
+    aDonorList.createList();
+    if (!aDonorList.isEmpty()) {
+        displayMenu();
+        processSelection(aDonorList);
+    }
 
-	DonorList list1;
+    return 0;
+}
+
+/* 	DonorList list1;
 	list1.createList();
 	cout << "List 1:\n";
 	cout << "Total donors: " << list1.getNoOfDonors() << endl;
@@ -45,20 +54,11 @@ int main() {
 	cout << "\n\n********** list2 Test **********\n" << endl;
 	cout << "List 2:\n";
 	cout << "Total donors: " << list2.getNoOfDonors() << endl;
-	
+
 	list2.printAllDonors();
-	return 0;
-}
-
-/* DonorList aDonorList;
-	aDonorList.createList();
-	if (!aDonorList.isEmpty()) {
-		displayMenu();
-		processSelection(aDonorList);
-	}
-	aDonorList.clearList();
-
-	return 0; */
+ *
+ *
+ *  */
 
 //	std::cout << "********** MemberType Test **********" << std::endl;
 //	//Default Constructor

@@ -74,6 +74,8 @@ void processSelection(DonorList& aDonorList)
             cout << endl;
             if (willContinue == "y")
                 displayMenu();
+            else
+                cout << "  => Thank you for visiting our site!\n";
         }
     }
 }
