@@ -93,7 +93,6 @@ void DonorList::copyCallingObjIsEmpty(const DonorList& otherList)
 		curCall  = curCall->getPtrToNext();
 	}
 	last  = curCall;
-	count = otherList.count;
 }
 
 /*
@@ -152,8 +151,6 @@ void DonorList::copyCallingObjLonger(const DonorList& otherList)
 		curCall = temp->getPtrToNext();
 	}
 	last->setPtrToNext(nullptr);
-
-	count = otherList.count;
 }
 
 /*
@@ -182,6 +179,5 @@ void DonorList::copyCallingObjShorter(const DonorList& otherList)
 				 donor.getMembershipNo(),donor.getAmountDonated());
 		}
 		curCall = curCall->getPtrToNext();
-	}		
-	count = otherList.count;
+	}
 }
