@@ -143,8 +143,8 @@ void DonorList::copyCallingObjLonger(const DonorList& otherList)
 	}
 
 	curCall->setDonor(curParam->getDonor());
-    last = curCall;
-    curCall = curCall->getPtrToNext();
+	last = curCall;
+	curCall = curCall->getPtrToNext();
 
 	while (curCall != nullptr)
 	{
