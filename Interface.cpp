@@ -36,10 +36,10 @@ void displayMenu()
 void processSelection(DonorList& aDonorList)
 {
 
-    string willContinue = "y";
+    char willContinue = 'y';
     bool exit = false;
 
-    while ((willContinue == "y") && !exit)
+    while ((willContinue == 'y') && !exit)
     {
         cout << "  => Enter your selection: ";
         int selection{0};
@@ -72,7 +72,7 @@ void processSelection(DonorList& aDonorList)
             cout << " \n  => Would you like to continue? (y/n) ";
             cin >> willContinue;
             cout << endl;
-            if (willContinue == "y")
+            if (willContinue == 'y')
                 displayMenu();
             else
                 cout << "  => Thank you for visiting our site!\n";
