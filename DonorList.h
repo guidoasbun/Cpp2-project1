@@ -62,7 +62,7 @@ public:
 
 	void clearList();
 	~DonorList();
-	
+
 	DonorList(const DonorList&);
 	DonorList& operator=(const DonorList&);
 
@@ -75,8 +75,6 @@ private:
     Node* first;
     Node* last;
     int count;
-    
-	
 };
 
 #endif
