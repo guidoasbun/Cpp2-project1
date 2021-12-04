@@ -35,7 +35,6 @@ void displayMenu()
 
 void processSelection(DonorList& aDonorList)
 {
-
     char willContinue = 'y';
     bool exit = false;
 
@@ -82,19 +81,19 @@ void processSelection(DonorList& aDonorList)
 
 void addDonor(DonorList& aDonorList)
 {
-    string firstName;
+    string firstName = "";
     cout << "  => Enter donor's first name: ";
     cin >> firstName;
 
-    string lastName;
+    string lastName = "";
     cout << "  => Enter donor's last name: ";
     cin >> lastName;
 
-    int memberNumber;
+    int memberNumber = 0;
     cout << "  => Enter donor's membership number: ";
     cin >> memberNumber;
 
-    double donationAmount;
+    double donationAmount = 0.0;
     cout << "  => Enter amount donated: $ ";
     cin >> donationAmount;
 
@@ -105,7 +104,7 @@ void addDonor(DonorList& aDonorList)
 
 void deleteDonor(DonorList& aDonorList)
 {
-    int membershipNumber;
+    int membershipNumber = 0;
     cout << "  => Enter donor's membership number: ";
     cin >> membershipNumber;
 
@@ -114,6 +113,7 @@ void deleteDonor(DonorList& aDonorList)
     cout << "\n  => Donor has been deleted. \n";
 }
 
-void printAllDonors(DonorList& aDonorList){
+void printAllDonors(DonorList& aDonorList)
+{
     aDonorList.printAllDonors();
 }

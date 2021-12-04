@@ -57,15 +57,15 @@ void DonorType::printDonor() const
 
 void DonorType::printDonation() const
 {
-    cout << firstName << ", " << lastName << endl;
-    cout << fixed << showpoint << setprecision(2);
-    cout << "Donation Amount: $" << amount << endl;
+	cout << this->getFirstName() << ", " << this->getLastName() << endl;
+	cout << fixed << showpoint << setprecision(2);
+	cout << "Donation Amount: $" << amount << endl;
 }
 
 bool DonorType::operator<(const DonorType& otherDonor) const
 {
 	if (amount == otherDonor.amount)
-		return  memberID < otherDonor.memberID;
+		return  this->getMembershipNo() < otherDonor.getMembershipNo();
 	else
 		return  amount < otherDonor.amount;
 }

@@ -23,10 +23,11 @@ class MemberType
 	public:
 		MemberType() : 
 			firstName("N/A"), lastName("N/A"), memberID(0) {};
-		MemberType(const std::string& first, const std::string& last, int id) :
-			firstName(first), lastName(last), memberID(id) {};
+		MemberType(const std::string& first, const std::string& last, 
+			int id) : firstName(first), lastName(last), memberID(id){};
 		
-		void setMemberInfo(const std::string&, const std::string&, int);
+		void setMemberInfo(const std::string&, 
+			const std::string&, int);
 
 		const std::string& getFirstName() const;
 		const std::string& getLastName() const; 
@@ -37,7 +38,7 @@ class MemberType
 
 		~MemberType();
 		
-	protected:
+	private:
 		std::string firstName;
 		std::string lastName;
 		int  memberID;
