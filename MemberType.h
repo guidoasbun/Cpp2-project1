@@ -38,7 +38,7 @@ class MemberType
 
 		~MemberType();
 		
-	protected:
+	private:
 		std::string firstName;
 		std::string lastName;
 		int  memberID;
