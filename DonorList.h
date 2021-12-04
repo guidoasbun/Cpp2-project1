@@ -44,8 +44,6 @@ class DonorList
 public:
 	DonorList() : first(nullptr), last(nullptr), count(0) {};
 
-	DonorList(const DonorList&);
-
 	void addDonor(const std::string& firstName,
 		const std::string& lastName, int memberNum, int donation);
 
@@ -64,7 +62,8 @@ public:
 
 	void clearList();
 	~DonorList();
-
+	
+	DonorList(const DonorList&);
 	DonorList& operator=(const DonorList&);
 
 private:
