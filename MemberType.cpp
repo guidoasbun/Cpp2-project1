@@ -47,5 +47,4 @@ void MemberType::printMemberInfo() const
 		<< " " << lastName << endl;
 }
 
-MemberType::~MemberType()
-{ /*UNSURE IF ANYTHING NEEDS TO BE DELETED.*/}
+MemberType::~MemberType() {}
