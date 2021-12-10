@@ -30,7 +30,7 @@ void displayMenu()
     cout << string(4, ' ') << "1. Add a donor\n";
     cout << string (4, ' ') << "2. Delete a donor\n";
     cout << string(4, ' ') << "3. Print all donor\n";
-    cout << string (4, ' ') << "4. To Exit\n\n";
+    cout << string (4, ' ') << "4: To Exit\n\n";
 }
 
 void processSelection(DonorList& aDonorList)
