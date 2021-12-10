@@ -113,7 +113,7 @@ void deleteDonor(DonorList& aDonorList)
     cout << "\n  => Donor has been deleted. \n";
 }
 
-void printAllDonors(DonorList& aDonorList)
+void printAllDonors(const DonorList& aDonorList)
 {
     aDonorList.printAllDonors();
 }
