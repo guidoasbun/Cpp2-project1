@@ -81,11 +81,11 @@ void processSelection(DonorList& aDonorList)
 
 void addDonor(DonorList& aDonorList)
 {
-    string firstName = "";
+    string firstName;
     cout << "  => Enter donor's first name: ";
     cin >> firstName;
 
-    string lastName = "";
+    string lastName;
     cout << "  => Enter donor's last name: ";
     cin >> lastName;
 
