@@ -23,7 +23,7 @@
 using namespace std;
 
 void DonorList::addDonor(const std::string &firstName,
-	const std::string &lastName, int memberNum, int donation)
+	const std::string &lastName, int memberNum, double donation)
 {
     DonorType *newDonor = new DonorType(firstName, lastName,
 		memberNum, donation);
