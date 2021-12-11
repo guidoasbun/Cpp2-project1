@@ -35,8 +35,22 @@ void DonorList::addDonor(const std::string &firstName,
     }
     else
     {
-        newNode->setPtrToNext(first);
-        first = newNode;
+        if (first->getDonor().getMembershipNo() > memberNum)
+        {
+            newNode->setPtrToNext(first);
+            first = newNode;
+        }
+        else {
+            Node* temp = first->getPtrToNext();
+            Node* trail = first;
+            while (temp != nullptr && temp->getDonor().getMembershipNo() < memberNum)
+            {
+                trail = temp;
+                temp = temp->getPtrToNext();
+            }
+            newNode->setPtrToNext(temp);
+            trail->setPtrToNext(newNode);
+        }
     }
     ++count;
 }
