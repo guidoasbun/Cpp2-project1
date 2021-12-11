@@ -68,7 +68,7 @@ public:
 
 private:
 	void copyCallingObjIsEmpty(const DonorList& otherList);
-	void copyObjectsSameLength(const DonorList& otherList) const;
+	void copyObjectsSameLength(const DonorList& otherList);
 	void copyCallingObjLonger(const DonorList& otherList);
 	void copyCallingObjShorter(const DonorList& otherList);
 	

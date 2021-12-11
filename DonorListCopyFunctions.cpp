@@ -35,9 +35,10 @@ DonorList::DonorList(const DonorList& otherList)
 
 	while (current != nullptr)
 	{
-		DonorType donor = current->getDonor();
-		addDonor(donor.getFirstName(), donor.getLastName(), 
-				donor.getMembershipNo(), donor.getAmountDonated() );
+		addDonor(current->getDonor().getFirstName(),
+				 current->getDonor().getLastName(),
+				 current->getDonor().getMembershipNo(),
+				 current->getDonor().getAmountDonated() );
 		current = current->getPtrToNext();
 	}
 	count = otherList.count;
@@ -107,7 +108,7 @@ void DonorList::copyCallingObjIsEmpty(const DonorList& otherList)
 	data from the parameter object into the calling object, without
 	deleting or creating any nodes.
 */
-void DonorList::copyObjectsSameLength(const DonorList& otherList) const
+void DonorList::copyObjectsSameLength(const DonorList& otherList)
 {
 	Node* curParam = otherList.first;
 	Node* curCall  = first;
