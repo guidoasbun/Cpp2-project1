@@ -65,10 +65,10 @@ void DonorList::createList()
                     current = current->getPtrToNext();
                 current->setPtrToNext(newNode);
                 last = current->getPtrToNext();
-            }
-        }
-        ++count;
+              }
+         ++count;
 	}
+     }
 }
 
 int DonorList::getNoOfDonors() const
