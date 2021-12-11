@@ -35,11 +35,8 @@ void DonorList::addDonor(const std::string &firstName,
     }
     else
     {
-        Node* current = first;
-        while (current->getPtrToNext() != nullptr)
-            current = current->getPtrToNext();
-        current->setPtrToNext(newNode);
-        last = current->getPtrToNext();
+        newNode->setPtrToNext(first);
+        first = newNode;
     }
     ++count;
 }
@@ -49,13 +46,28 @@ void DonorList::createList()
     set<DonorType> theSet =  getData();
 
 	if (theSet.empty())
-		cout << "\nDatabase has no data.\n";
+		cerr << "\nDatabase has no data.\n";
 	else
 	{
 		auto iter = theSet.begin();
 		for (const auto& elem : theSet)
-			addDonor(elem.getFirstName(), elem.getLastName(),
-				elem.getMembershipNo(), elem.getAmountDonated());
+        {
+            DonorType *newDonor = new DonorType(elem.getFirstName(), elem.getLastName(), elem.getMembershipNo(), elem.getAmountDonated());
+            Node* newNode = new Node(*newDonor, nullptr);
+            if (first == nullptr)
+            {
+                first = newNode;
+                last = first;
+            }
+            else {
+                Node *current = first;
+                while (current->getPtrToNext() != nullptr)
+                    current = current->getPtrToNext();
+                current->setPtrToNext(newNode);
+                last = current->getPtrToNext();
+            }
+        }
+        ++count;
 	}
 }
 
@@ -137,17 +149,12 @@ void DonorList::deleteDonor(int memberID)
 
 void DonorList::printAllDonors() const
 {
-    if (first == nullptr)
-        cout << "Donor list is empty";
-    else
-    {
         Node* current = first;
         while (current != nullptr)
         {
             current->getDonor().printMemberInfo();
             current = current->getPtrToNext();
         }
-    }
 }
 
 void DonorList::printAllDonations() const
