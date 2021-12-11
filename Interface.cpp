@@ -29,7 +29,7 @@ void displayMenu()
     cout << "\nSelect one of the following:\n\n";
     cout << string(4, ' ') << "1. Add a donor\n";
     cout << string (4, ' ') << "2. Delete a donor\n";
-    cout << string(4, ' ') << "3. Print all donor\n";
+    cout << string(4, ' ') << "3. Print all donors\n";
     cout << string (4, ' ') << "4: To Exit\n\n";
 }
 
@@ -104,13 +104,21 @@ void addDonor(DonorList& aDonorList)
 
 void deleteDonor(DonorList& aDonorList)
 {
-    int membershipNumber = 0;
-    cout << "  => Enter donor's membership number: ";
-    cin >> membershipNumber;
+    if (aDonorList.getNoOfDonors() <= 0)
+    {
+        cout << "The database has no donors.\n";
+    }
+    else
+    {
+        int membershipNumber = 0;
+        cout << "  => Enter donor's membership number: ";
+        cin >> membershipNumber;
 
-    aDonorList.deleteDonor(membershipNumber);
+        aDonorList.deleteDonor(membershipNumber);
 
-    cout << "\n  => Donor has been deleted. \n";
+        cout << "\n  => Donor has been deleted. \n";
+    }
+
 }
 
 void printAllDonors(const DonorList& aDonorList)
