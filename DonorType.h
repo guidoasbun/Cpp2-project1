@@ -44,7 +44,7 @@ public:
     bool operator<(const DonorType& otherDonor) const;
 
 private:
-	double amount;
+	double amount = 0;
 };
 
 #endif
