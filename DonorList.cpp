@@ -65,24 +65,8 @@ void DonorList::createList()
 	{
 		auto iter = theSet.begin();
 		for (const auto& elem : theSet)
-        {
-            DonorType *newDonor = new DonorType(elem.getFirstName(), elem.getLastName(), elem.getMembershipNo(), elem.getAmountDonated());
-            Node* newNode = new Node(*newDonor, nullptr);
-            if (first == nullptr)
-            {
-                first = newNode;
-                last = first;
-            }
-            else {
-                Node *current = first;
-                while (current->getPtrToNext() != nullptr)
-                    current = current->getPtrToNext();
-                current->setPtrToNext(newNode);
-                last = current->getPtrToNext();
-              }
-         ++count;
-	}
-     }
+            addDonor(elem.getFirstName(), elem.getLastName(), elem.getMembershipNo(), elem.getAmountDonated());
+    }
 }
 
 int DonorList::getNoOfDonors() const
@@ -123,7 +107,6 @@ bool DonorList::searchID(int memberID) const
 
 void DonorList::deleteDonor(int memberID)
 {
-
     if (first->getDonor().getMembershipNo() == memberID)
     {
         Node* current = first;

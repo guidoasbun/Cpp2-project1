@@ -104,7 +104,7 @@ void addDonor(DonorList& aDonorList)
 
 void deleteDonor(DonorList& aDonorList)
 {
-    if (aDonorList.getNoOfDonors() <= 0)
+    if (aDonorList.getNoOfDonors() == 0)
     {
         cout << "The database has no donors.\n";
     }
