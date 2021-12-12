@@ -113,10 +113,11 @@ void deleteDonor(DonorList& aDonorList)
         int membershipNumber = 0;
         cout << "  => Enter donor's membership number: ";
         cin >> membershipNumber;
+        cout << endl;
 
         aDonorList.deleteDonor(membershipNumber);
 
-        cout << "\n  => Donor has been deleted. \n";
+        cout << "  => Donor has been deleted. \n";
     }
 
 }
