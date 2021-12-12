@@ -140,7 +140,7 @@ void DonorList::deleteDonor(int memberID)
             }
         }
         if (!found)
-            cout << "Donor is not on the list" << endl;
+            cout << "Donor is not on the list";
     }
 }
 
